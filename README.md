@@ -1,4 +1,4 @@
-# theOnlineClinic
+# Clinicon - The Online Clinic
 My first HTML5, CSS3, JavaScript, NodeJS personal project!
 
 Este projeto foi elaborado com o intuíto de fixar os conhecimentos aprendidos e desenvolvidos ao longo do curso LaunchBase 
