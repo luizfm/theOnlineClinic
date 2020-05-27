@@ -1,0 +1,82 @@
+{% extends "layout.njk" %}
+
+{% block head %} 
+    <title>Apointment Schedule</title>
+{% endblock head %}
+
+{% block content %}
+    <form class="form" method="POST" action="/members">
+        <div class="item">
+            <h2>Sistema de agendamento de consultas</h2>
+        </div>
+
+        <div class="item">
+            <div>Nome do paciente</div>
+            <div>
+                <input type="text" placeholder="Insira seu nome" name="name">
+            </div>
+        </div>
+
+        <div class="item">
+            <div>CPF</div>
+            <div>
+                <input type="number" placeholder="Número de CPF sem pontos" name="cpf">
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Altura</div>
+            <div>
+                <input type="number" placeholder="Altura sem pontos" name="height">
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Peso</div>
+            <div>
+                <input type="number" placeholder="Peso em valor inteiro" name="weight">
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Telefone</div>
+            <div>
+                <input type="number" placeholder="Informe o telefone sem traços ou pontos" name="phone">
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Email</div>
+            <div>
+                <input type="email" placeholder="Insira seu email" name="email">
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Area</div>
+            <div>
+                <select name="service">
+                    <option>Clínico Geral</option>
+                    <option>Pediatra</option>
+                    <option>Oftomologista</option>
+                    <option>Gastro</option>
+                    <option>Ginecologista</option>
+                    <option>Urologista</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Data</div>
+            <div>
+                <input type="date" placeholder="Insira seu email" name="appointment_date">
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="btnSave" type="submit">Agendar</button>
+            <a href="/main" class="btnCancel">Cancelar</a>
+        </div>
+
+    </form>
+{% endblock content %}

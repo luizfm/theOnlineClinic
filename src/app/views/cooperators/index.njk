@@ -1,0 +1,59 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Apointment Schedule</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="card">
+        <table width="100%" height="90%">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Área da consulta</th>
+                    <th>Data</th>
+                    <th colspan="2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                    <tr>
+                        <td>{{member.name}}</td>
+                        <td>{{member.cpf}}</td>
+                        <td>{{member.height}}</td>
+                        <td>{{member.weight}}</td>
+                        <td>{{member.phone}}</td>
+                        <td>{{member.email}}</td>
+                        <td>{{member.service}}</td>
+                        <td>{{member.appointment_date}}</td>
+                        <td>
+                            <a href="/members/{{ member.id }}">
+                                ver
+                            </td>
+                            <td>
+                                <form id="delete-form" method="POST" action="/cooperators?_method=DELETE">
+                                    <input type="hidden" name="id" value={{member.id}}>
+                                    <button type="submit">deletar</button>
+                                </form>
+                            </td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+          <script>
+            const formDelete = document.querySelector("#delete-form")
+            formDelete.addEventListener("submit", function (event) {
+                const confirmation = confirm("Deseja deletar?")
+                if (!confirmation) {
+                    event.preventDefault()
+                }
+            })
+        </script>
+{% endblock content %}

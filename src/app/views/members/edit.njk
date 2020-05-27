@@ -1,0 +1,100 @@
+{% extends "layout.njk" %}
+
+{% block head %} 
+    <title>Apointment Schedule</title>
+{% endblock head %}
+
+{% block content %}
+<section class="form">
+    <form method="POST" action="/members?_method=PUT">
+        <div class="item">
+            <h2>Sistema de agendamento de consultas</h2>
+        </div>
+
+        <div class="item">
+            <div>Nome do paciente</div>
+            <div>
+                <input type="text" placeholder="Insira seu nome" name="name" value={{member.name}}>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>CPF</div>
+            <div>
+                <input type="number" placeholder="Número de CPF sem pontos" name="cpf" value={{member.cpf}}>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Altura</div>
+            <div>
+                <input type="number" placeholder="Altura sem pontos" name="height" value={{member.height}}>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Peso</div>
+            <div>
+                <input type="number" placeholder="Peso em valor inteiro" name="weight" value={{member.weight}}>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Telefone</div>
+            <div>
+                <input type="number" placeholder="Informe o telefone sem traços ou pontos" name="phone" value={{member.phone}}>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Email</div>
+            <div>
+                <input type="email" placeholder="Insira seu email" name="email" value={{member.email}}>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Area</div>
+            <div>
+                <select name="service" value={{member.service}}>
+                    <option>Clínico Geral</option>
+                    <option>Pediatra</option>
+                    <option>Oftomologista</option>
+                    <option>Gastro</option>
+                    <option>Ginecologista</option>
+                    <option>Urologista</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Data</div>
+            <div>
+                <input type="date" placeholder="Insira seu email" name="appointment_date" value={{member.appointment_date}}>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="btnSend" type="submit">Salvar</button>
+        </div>
+        <input type="hidden" name="id" value={{member.id}}>
+    </form>
+    <form class="delete-form" method="POST" action="/cooperators?_method=DELETE">
+        <div class="button">
+            <input type="hidden" name="id" value={{member.id}}>
+            <button class="btnSend">Deletar</button>
+        </div>
+    </form>
+</section>
+
+<script>
+    const formDelete = document.querySelector(".delete-form")
+    formDelete.addEventListener("submit", function(event) {
+        const confirmation = confirm("Deseja deletar?")
+        if(!confirmation) {
+            event.preventDefault()
+        }
+    })
+
+</script>
+{% endblock content %}

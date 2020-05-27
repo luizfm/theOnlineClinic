@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #ececec;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+}
+
+.secondary {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+
+    animation: up 800ms;
+}
+
+.secondary::before {
+    content: "";
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    background-color: #ececec;
+    z-index: -1;
+
+    animation: down 2s;
+}
+
+@keyframes down {
+    from {
+        background-color: rgb(136, 221, 255);
+        top: 0%;
+        height: 10%;
+        z-index: 1;
+    }
+
+    50% {
+        background-color: rgb(76, 175, 214);
+        top: 80%;
+        height: 20%;
+        z-index: 1;
+    }
+
+    to {
+        top: 98%;
+        height: 2%;
+        z-index: 1;
+    }
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.2;
+    }
+    60% {
+        opacity: 0.4;
+    }
+    80% {
+        opacity: 0.6;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* === HEADER === */
+
+header {
+    display: flex;
+    height: 120px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    background-color: white;
+}
+
+.links-home {
+    width: 500px;
+    text-align:center;
+}
+
+.links-home a {
+    font-size: 24px;
+    line-height: 34px;
+    text-decoration: none;
+    margin-right: 32px;
+    font-weight: bold;
+    color: #00ACEE;
+    transition: 200ms;
+}
+
+.links-home a:hover {
+    color: #FF6961;
+    text-decoration: underline;
+}
+
+.image-logo {
+    top: 8;
+    left: 100px;
+    position: absolute;
+    height: 100px;
+    width: 150px;
+}
+
+.image-logo img {
+    height: 100%;
+    width: 90%;
+}
+
+.logo {
+    height: 500px;
+    width: 500px;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+header a {
+    font-size: 24px;
+    line-height: 34px;
+    text-decoration: none;
+    margin-right: 64px;
+    font-weight: bold;
+    color: #00ACEE;
+    transition: 200ms;
+}
+
+header a:hover {
+    color: #FF6961;
+    text-decoration: underline;
+}
+
+
+/* ==== FORM ==== */
+
+.form {
+    background-color: white;
+    width: 50%;
+    height: 1200px;
+    box-shadow: 1px 1px 14px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 16px auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form h2 {
+    margin: 32px auto;
+}
+
+.form form h2 {
+    margin: 32px auto;
+    text-align: center;
+}
+
+.delete-form {
+    width: 100%;
+}
+
+.item:first-child {
+    color: #FF6961;
+}
+
+.item:not(:first-child) {
+    margin: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    color: #969696;
+}
+
+.item:not(:first-child) {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.item input {
+    height: 50px;
+    width: 600px;
+    border: 1px solid #ececec;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.item select {
+    height: 50px;
+    width: 600px;
+    border: 1px solid #ececec;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.button .btnSend {
+    height: 50px;
+    
+    font-size: 24px;
+
+    padding: 8px 16px;
+    border-radius: 8px;
+
+    
+    width: 90%;
+
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btnSave,
+.btnCancel {
+    height: 50px;
+    
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+
+.button .btnSend:first-child:hover {
+    background-color: transparent;
+    border: 1px solid #4169e1;
+    color: #4169e1;
+}
+
+.button .btnSend:nth-child(2):hover {
+    background-color: transparent;
+    border: 1px solid rgb(245, 160, 160);
+    color: #FF6961;
+}
+
+.button .btnSend:first-child {
+    color: white;
+    display: block;
+    margin: 256px auto 16px auto;
+    background-color: #4169e1;
+    transition: 400ms;
+    letter-spacing: 3px;
+}
+
+.button .btnSend:nth-child(2) {
+    background-color: #FF6961;
+    color: #fff;
+    transition: 400ms;
+    display: block;
+    margin: 1px auto;
+    letter-spacing: 3px;
+}
+
+
+.button .btnSave {
+    color: white;
+    display: block;
+    margin: 180px auto 16px;
+    background-color: #4169e1;
+    transition: 400ms;
+    letter-spacing: 3px;
+    width: 90%;
+}
+
+.button .btnCancel {
+    background-color: #FF6961;
+    color: #fff;
+    transition: 400ms;
+    display: block;
+    margin: 1px auto;
+    letter-spacing: 3px;
+    width: 90%;
+    text-align: center;
+}
+
+.button .btnSave:hover {
+    color: #4169e1;
+    background-color: #fff;
+    border: 1px solid #4169e1;
+    transition: 400ms;
+    letter-spacing: 3px;
+}
+
+.button .btnCancel:hover {
+    color: #FF6961;
+    background-color: #fff;
+    border: 1px solid #FF6961;
+    transition: 400ms;
+    letter-spacing: 3px;
+}
+
+/* === FOOTER === */
+
+footer {
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #ececec;
+    background-color: white;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.social-links {
+    margin-right: 32px;
+}
+
+.social-links a {
+    margin-right: 8px;
+}
+
+
+/* ====================== INDEX COOPERATORS ================= */
+
+.card {
+    margin: 32px auto;
+    width: 80%;
+    height: 800px;
+    background-color: #fff;
+    box-shadow: 1px 1px 14px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.card tr th {
+    margin-top: 160px;
+    font-size: 20px;
+    color: #00ACEE;
+    padding: 16px;
+}
+
+
+tbody tr td {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tbody tr:not(:last-child) td {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+td a {
+    color: white;
+    padding: 8px;
+    background-color: #4169e1;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+td {
+    padding: 16px;
+}
+
+td button {
+    color: white;
+    font-weight: bold;
+    padding: 12px 8px;
+    background-color: lightcoral;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+
+/* ================ SHOW PATIENT ========== */
+
+.wrapper {
+    background-color: white;
+    width: 50%;
+    height: 1200px;
+    box-shadow: 1px 1px 14px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 16px auto;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.wrapper .item:not(:first-child) {
+    margin: 0px 32px 32px 32px;
+    color: black;
+    border-bottom: 1px solid rgba(187, 178, 192, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px 16px 16px;
+}
+
+.wrapper .item:first-child {
+    margin: 64px auto;
+}
+
+
+.wrapper .button {
+    width: 100%;
+}
+
+.first-column {
+    margin-bottom: 12px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.second-column {
+    margin-bottom: 12px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnEdit {
+    
+    padding: 12px 32px;
+    background-color: #4169e1;
+    color: white;
+    border-radius: 4px;
+    margin: 32px auto;
+    width: 90%;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 50px;
+}
+
+.btnEdit:hover {
+
+}
+
+a.btnEdit {
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+}

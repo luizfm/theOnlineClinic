@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width">
+        <meta http-equiv="X-UA-Compatible, initial-scale=1.0" content="ie-edge">
+
+        {% block head %} {% endblock head %}
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="image-logo">
+                <a href="/main"><img src="https://i.imgur.com/es4eTIg.png" title="source: imgur.com" /></a>
+            </div>
+            <div class="links">
+                <a href="/members">Marcar Consultas</a>
+                <a href="/cooperators">Agendadas</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock content %}
+
+        <footer>
+            <div class="social-links">
+                <a href="">Facebook</a>
+                <a href="">Gmail</a>
+                <a href="">Instagram</a>
+            </div>
+            <div class="copyright">
+                <p>Todos os direitos reservados. © 2020-2020</p>
+            </div>
+        </footer>
+    </body>
+</html>

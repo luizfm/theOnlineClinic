@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block head %} 
+    <title>Apointment Schedule</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="item">
+            <h2>Sistema de agendamento de consultas</h2>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Nome do paciente</div>
+            <div class="second-column">{{member.name}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">CPF</div>
+            <div class="second-column">{{member.cpf}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Altura</div>
+            <div class="second-column">{{member.height}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Peso</div>
+            <div class="second-column">{{member.weight}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Telefone</div>
+            <div class="second-column">{{member.phone}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Email</div>
+            <div class="second-column">{{member.email}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Area</div>
+            <div class="second-column">{{member.service}}</div>
+        </div>
+
+        <div class="item">
+            <div class="first-column">Data</div>
+            <div class="second-column">{{member.appointment_date}}</div>
+        </div>
+
+        <div class="button">
+            <a href="/members/{{member.id}}/edit" class="btnEdit">Editar</a>
+        </div>
+
+    </div>
+{% endblock content %}
